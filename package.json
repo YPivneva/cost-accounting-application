@@ -51,6 +51,7 @@
     "prettier": "^3.2.5",
     "style-loader": "^3.3.4",
     "terser": "^5.30.0",
+    "ts-loader": "^9.5.1",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.6.0",
     "webpack": "^5.91.0",

@@ -7,6 +7,84 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <script src="./js/script.js"></script>
+    <article class="calendar">
+      <div class="expenses">
+        <h3>Расходы</h3>
+        <table class="expenses-data">
+          <tr class="first-line">
+            <th class="data-date">Дата</th>
+            <th class="data-sum">Сумма</th>
+            <th class="data-category">Категория</th>
+            <th class="data-comments">Коментарий</th>
+          </tr>
+          <tr>
+            <td class="data-date">10.03.2024</td>
+            <td class="data-sum">1014</td>
+            <td class="data-category">продукты</td>
+            <td class="data-comments"></td>
+          </tr>
+          <tr>
+            <td class="data-date">21.03.2024</td>
+            <td class="data-sum">476</td>
+            <td class="data-category">продукты</td>
+            <td class="data-comments"></td>
+          </tr>
+          <tr>
+            <td class="data-date">01.04.2024</td>
+            <td class="data-sum">75</td>
+            <td class="data-category">продукты</td>
+            <td class="data-comments"></td>
+          </tr>
+          <tr>
+            <td class="data-date">15.04.2024</td>
+            <td class="data-sum">1014</td>
+            <td class="data-category">химия</td>
+            <td class="data-comments"></td>
+          </tr>
+          <tr>
+            <td class="data-date">17.04.2024</td>
+            <td class="data-sum">1500</td>
+            <td class="data-category">развлечения</td>
+            <td class="data-comments"></td>
+          </tr>
+          <tr>
+            <td class="data-date">27.05.2024</td>
+            <td class="data-sum">3050</td>
+            <td class="data-category">химия</td>
+            <td class="data-comments"></td>
+          </tr>
+          <tr>
+            <td class="data-date">30.05.2024</td>
+            <td class="data-sum">900</td>
+            <td class="data-category">развлечения</td>
+            <td class="data-comments"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="filtration">
+        <h3>Фильтрация расходов</h3>
+        <div>
+          <div class="date">
+            <label for="start-date">Дата с:</label>
+            <input  type="date" id="start-date" name="start-date" value="10.03.2024">
+          </div>
+          <div class="date">
+            <label for="end-date">Дата по:</label>
+            <input type="date" id="end-date" name="end-date" value="11.03.2024">
+          </div>
+        </div>
+        <select name="category" id="category">
+          <option value="">Категория</option>
+          <option value="products">продукты</option>
+          <option value="chemical">химия</option>
+          <option value="rest">развлечения</option>
+        </select>
+        <div class="button-filter">
+          <button class="filter-data">Фильтровать</button>
+          <button class="count-data">Рассчитать сумму</button>
+        </div>
+      </div>
+    </article>
+    <script src="./index.js"></script>
   </body>
 </html>

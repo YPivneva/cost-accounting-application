@@ -1,25 +1,17 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-// eslint-disable-next-line
-const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   devtool: "inline-source-map",
   mode: "development",
-  entry: "./src/index.js",
-  resolve: {
-    extensions: [".js", ".ts"],
-  },
+  entry: path.resolve(__dirname, "./src/index.ts"),
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "[name].[hash:8].js",
     clean: true,
+  },
+  resolve: {
+    extensions: [".js", ".ts"],
   },
   module: {
     rules: [
@@ -31,7 +23,7 @@ module.exports = {
         },
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
       {
@@ -39,30 +31,19 @@ module.exports = {
         use: "html-loader",
       },
       {
-        test: /\.(png|gif)$/,
-        type: "asset/resource",
-        generator: {
-          filename: "images/[name]-[hash][ext]",
-        },
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: "file-loader?name=/images/[name].[ext]",
+          },
+        ],
       },
     ],
   },
   devServer: {
-    compress: false,
-    open: true,
-    port: 4000,
-    hot: true,
+    static: "./dist",
   },
   optimization: {
-    minimize: true,
-    minimizer: [new HtmlMinimizerPlugin()],
+    runtimeChunk: "single",
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "./src/index.html"),
-      filename: "index.html",
-    }),
-    new CssMinimizerPlugin(),
-    new TerserPlugin(),
-  ],
 };

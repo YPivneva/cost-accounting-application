@@ -1,0 +1,57 @@
+.calendar {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  border: 2px solid black;
+}
+.expenses {
+  width: 70%;
+  padding: 10px;
+  border: 2px solid black;
+}
+.expenses h3 {
+  text-align: center;
+}
+.expenses-data {
+  width: 100%;
+}
+.expenses-data td {
+  padding: 5px;
+}
+.expenses-data tr:nth-child(odd) {
+  background-color: #cbe6dd;
+}
+.expenses-data tr:nth-child(even) {
+  background-color: #e1dfdf;
+}
+.expenses-data tr:first-child {
+  background-color: #5dfec9;
+}
+
+.data-date {
+  width: 200px;
+}
+.data-sum {
+  width: 200px;
+}
+.data-category {
+  width: 200px;
+}
+.filtration {
+  width: 30%;
+  border: 2px solid black;
+}
+.filtration h3 {
+  text-align: center;
+}
+.date {
+  padding: 10px;
+}
+#category {
+  padding: 5px;
+  margin: 10px;
+}
+.button-filter {
+  padding: 10px;
+  margin: 0 auto;
+}
